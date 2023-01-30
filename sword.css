@@ -1,0 +1,113 @@
+.example1{
+    width: 400px;
+    height: 300px;
+    border: 1px solid grey;
+    margin: 0 auto;
+    background: gainsboro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.example1::before{
+    content: '';
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    height: 10px;
+    background-color: rgb(128, 128, 128,0.6);
+    border-radius: 5px;
+    margin: 30px;
+    border: 1px solid#FFF;
+    padding: 0px 15px;
+}
+
+.example1:hover:before{
+    animation-name: sw1;
+    animation-duration: 3s;
+    animation-timing-function:ease-in ;
+    animation-fill-mode: forwards;
+}
+
+.knife{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.knife::before{
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    width: 150px;
+    height: 10px;
+    background-color: rgb(128, 128, 128,0.6); 
+    border-radius: 5px;
+    margin: 30px;
+    border: 1px solid#FFF;
+    padding: 0px 15px;
+}
+
+.knife:hover:before{
+    animation: sw2 3s ease-in forwards;
+}
+
+.knife::after
+{
+    content: '';
+    position: absolute;
+    top: 110px;
+    left: 80px;
+    width: 150px;
+    height: 10px;
+    background-color: rgb(128, 128, 128,0.6);
+    border-radius: 5px;
+    margin: 30px;
+    border: 1px solid#FFF;
+    padding: 0px 15px;
+}
+
+.knife:hover::after{
+    animation: sw3 3s ease-in forwards;
+}
+
+
+@keyframes sw1 {
+    50%{
+        opacity:0.4;
+    }
+    100%{
+        transform: translateY(35px);
+        opacity:0;
+    }
+    
+}
+@keyframes sw2{
+    to{
+        transform:rotate(60deg)  ;
+        top: 100px;
+        background-color: rgb(82, 82, 254);
+        box-shadow: 0px 0px 15px 7px blue;
+    }
+}
+
+@keyframes sw3 {
+    to{
+        transform: rotate(-60deg);
+        top: 100px;
+        background-color: rgb(252, 68, 68);
+        box-shadow: 0px 0px 15px 7px red;
+    }
+}
+
+.handle {
+    width: 30px;
+    height: 10px;
+    background-color: black;
+    border-radius: 3px;
+}
